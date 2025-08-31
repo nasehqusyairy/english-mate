@@ -1,8 +1,8 @@
 import type { Confluence } from "~/models/confluence"
 import PlaceholderImage from "~/assets/tools-3d.png";
 import TagContainer from "./tag-container";
-import { Calendar, Clock, Heart, Users } from "lucide-react";
-import { Button } from "./ui/button";
+import { Calendar, Check, Clock, Ticket } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 export default ({ confluences }: { confluences: Confluence[] }) => {
     return (
@@ -11,9 +11,11 @@ export default ({ confluences }: { confluences: Confluence[] }) => {
                 <div className="flex justify-between items-center p-4 not-last:border-b" key={index}>
                     <div className="relative w-4/12">
                         <div className="top-0 left-0 absolute p-2">
-                            <Button size={"icon"} className={"rounded-full" + (confluence.isJoined ? '' : ' bg-black/50')}>
-                                <Heart />
-                            </Button>
+                            {confluence.tickets === 0 && (
+                                <Badge className="bg-black/75 text-white">
+                                    Sold Out
+                                </Badge>
+                            )}
                         </div>
                         <img src={PlaceholderImage} alt="confluence" className="rounded-2xl w-full" />
                     </div>
@@ -23,7 +25,9 @@ export default ({ confluences }: { confluences: Confluence[] }) => {
                             <h1 className="font-bold text-foreground text-sm truncate">
                                 <a href="#" className="hover:underline">{confluence.title}</a>
                             </h1>
-                            <p className="truncate">{confluence.presenter}</p>
+                            <p className="truncate">
+                                by <a href="#" className="text-primary hover:underline">{confluence.presenter}</a>
+                            </p>
                         </div>
                         <div className="flex justify-between">
                             <p className="flex items-center gap-1">
@@ -33,8 +37,8 @@ export default ({ confluences }: { confluences: Confluence[] }) => {
                                 <Clock size={10} />
                                 {confluence.time}</p>
                             <p className="flex items-center gap-1">
-                                <Users size={10} />
-                                {confluence.audience}</p>
+                                <Ticket size={10} />
+                                {confluence.tickets}</p>
                         </div>
                     </div>
                 </div>

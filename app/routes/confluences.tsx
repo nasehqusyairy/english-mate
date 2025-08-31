@@ -1,5 +1,5 @@
 import { Search, Settings2 } from "lucide-react";
-import { Form, Link, Outlet, useOutlet } from "react-router";
+import { Form, Link, Outlet, useLocation, useOutlet } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
@@ -9,9 +9,11 @@ import ConfluenceList from "~/components/confluence-list";
 
 export default () => {
     const outlet = useOutlet();
+    const location = useLocation();
+
     return (
         <>
-            <header className="p-4 border-b">
+            <header className="p-4 pt-3 border-b">
                 <Form className="flex gap-2">
                     <div className="relative flex-1">
                         <Input type="search" placeholder="Search..." />
@@ -23,14 +25,14 @@ export default () => {
                 </Form>
             </header>
             <main>
-                <Tabs defaultValue="all">
+                <Tabs className="gap-0" defaultValue={location.pathname.split("/")[2] || 'all'}>
                     <div className="px-4 pt-4">
-                        <TabsList className="mb-2 w-full">
+                        <TabsList className="w-full">
                             <TabsTrigger asChild value="all">
                                 <Link to="/confluences">All</Link>
                             </TabsTrigger>
-                            <TabsTrigger asChild value="joined">
-                                <Link to="/confluences/liked">Liked</Link>
+                            <TabsTrigger asChild value="registered">
+                                <Link to="/confluences/registered">Registered</Link>
                             </TabsTrigger>
                             <TabsTrigger asChild value="created">
                                 <Link to="/confluences/created">Created</Link>

@@ -5,7 +5,7 @@ export default [
         layout('./components/layouts/create-fab.tsx', [
             index("routes/home.tsx"),
             route('/confluences', "routes/confluences.tsx", [
-                route('liked', "routes/confluences/liked.tsx"),
+                route('registered', "routes/confluences/registered.tsx"),
                 route('created', "routes/confluences/created.tsx"),
             ]),
             route('/lessons', "routes/lessons.tsx", [

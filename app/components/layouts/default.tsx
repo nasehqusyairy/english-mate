@@ -1,7 +1,8 @@
-import { Link, Outlet, useLocation } from "react-router";
+import { Link, Outlet, useLocation, useNavigation } from "react-router";
 import { Button } from "../ui/button";
 import { Bell, Book, GraduationCap, Home, User } from "lucide-react";
 import { useEffect } from "react";
+import { Progress } from "../ui/progress";
 
 
 const navItems = [
@@ -14,6 +15,8 @@ const navItems = [
 
 export default () => {
     const location = useLocation()
+
+    const navigation = useNavigation()
 
     const isActive = (path: string) => {
         if (path === "/") {
@@ -35,6 +38,7 @@ export default () => {
 
     return (
         <>
+            <Progress className="bg-background rounded-none" value={navigation.state === "loading" ? 75 : 0} />
             <Outlet />
             <footer className="app-footer-container">
                 <div className="app-footer">

@@ -84,6 +84,7 @@
   --sidebar-ring: oklch(0.606 0.25 292.717);
   --navbar-height: 4rem;
   --body-width: clamp(375px, 100%, 400px);
+  --fab-x-position: translateX(calc(calc(calc(var(--body-width)/2) - 1rem) - 100%));
 }
 
 .dark {
@@ -176,6 +177,24 @@
   
   .text-muted {
     @apply dark:text-white!;
+  }
+  
+  .fab {
+    bottom: calc(var(--navbar-height) + 1rem);
+    transform: var(--fab-x-position);
+    @apply  left-1/2 fixed rounded-full!;
+  }
+  
+  .fab.active {
+    transform: var(--fab-x-position) rotate(225deg);
+  }
+  
+  .lesson-fab {
+    bottom: calc(var(--navbar-height) + 9rem);
+  }
+  
+  .confluence-fab {
+    bottom: calc(var(--navbar-height) + 6rem);
   }
   
   [data-slot="button"] {

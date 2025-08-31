@@ -4,7 +4,7 @@ export type Confluence = {
     presenter: string;
     date: string;
     time: string;
-    audience: number;
+    tickets: number;
     tags: string[];
     image?: string;
     isJoined?: boolean;

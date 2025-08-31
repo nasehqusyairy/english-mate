@@ -1,11 +1,19 @@
-import { Plus } from "lucide-react";
+import { Book, GraduationCap, Plus } from "lucide-react";
 import { Button } from "../ui/button";
 import { Outlet } from "react-router";
+import { useState } from "react";
 
 export default () => {
+    const [isActive, setIsActive] = useState(false);
     return (
         <>
-            <Button size={"icon"} className="bottom-[calc(var(--navbar-height)+1rem)] left-1/2 fixed rounded-full translate-x-[calc(calc(calc(var(--body-width)/2)-1rem)-100%)]">
+            <Button size={"icon"} className={"fab " + (isActive ? "lesson-fab" : "")}>
+                <Book />
+            </Button>
+            <Button size={"icon"} className={"fab " + (isActive ? "confluence-fab" : "")}>
+                <GraduationCap />
+            </Button>
+            <Button size={"icon"} variant={isActive ? "secondary" : "default"} className={"fab " + (isActive ? "active" : "")} onClick={() => setIsActive(!isActive)}>
                 <Plus />
             </Button>
             <Outlet />

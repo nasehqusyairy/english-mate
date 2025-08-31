@@ -1,4 +1,4 @@
-import { Book, GraduationCap, Medal, MessageCircle, SunMoon, Zap } from "lucide-react";
+import { Book, GraduationCap, Medal, MessageCircle, Star, SunMoon, Zap } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import LessonItem from "~/components/lesson-item";
 import ConfluenceItem from "~/components/confluence-item";
@@ -25,7 +25,7 @@ const overviews = [
   {
     value: "Newbie",
     title: "Rank",
-    icon: Medal
+    icon: Star
   }
 ]
 
@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex justify-between items-center p-4 border-b">
+      <header className="flex justify-between items-center p-4 pt-3 border-b">
         <div className="brand">
           <h1>English Mate</h1>
         </div>

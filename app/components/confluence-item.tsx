@@ -1,4 +1,4 @@
-import { Calendar, Clock, Users } from "lucide-react"
+import { Calendar, Clock, Ticket } from "lucide-react"
 import TagContainer from "./tag-container"
 import PlaceholderImage from "~/assets/tools-3d.png"
 import type { Confluence } from "~/models/confluence"
@@ -26,7 +26,9 @@ export default ({ confluence }: ConfluenceItemProps) => {
                     <h1 className="mb-2 font-bold text-foreground hover:underline truncate">
                         <a href="#">{confluence.title}</a>
                     </h1>
-                    <p className="text-sm">{confluence.presenter}</p>
+                    <p className="text-sm truncate">
+                        by <a href="#" className="text-primary hover:underline">{confluence.presenter}</a>
+                    </p>
                 </div>
 
                 <hr className="mb-4" />
@@ -41,8 +43,8 @@ export default ({ confluence }: ConfluenceItemProps) => {
                         {confluence.time}
                     </p>
                     <p className="flex items-center gap-1">
-                        <Users size={10} />
-                        {confluence.audience}
+                        <Ticket size={10} />
+                        {confluence.tickets}
                     </p>
                 </div>
             </div>

@@ -5,7 +5,7 @@ import UpgradeProCard from "~/components/ui/upgrade-pro-card"
 export default () => {
     return (
         <main>
-            <section className="px-4 pt-4">
+            <section className="px-4 pt-3">
                 <div className="p-4 border rounded-2xl">
                     <div className="flex items-center gap-4">
                         <div className="flex justify-center items-center bg-primary/10 rounded-full size-15 text-primary shrink-0">
@@ -14,7 +14,7 @@ export default () => {
                         <div className="flex-auto gap-0.5 grid">
                             <h1 className="font-bold truncate">Mohammad Nasyikh Al-Qusyairy</h1>
                             <p className="flex items-center gap-1 text-muted">
-                                <Medal size={16} /> Basic Member
+                                <Medal size={16} /> Basic
                             </p>
                         </div>
                         <Button className="shrink-0">Edit</Button>
@@ -50,7 +50,7 @@ export default () => {
                         <div className="flex justify-center items-center bg-primary/10 rounded size-6 text-primary shrink-0">
                             <Medal size={16} />
                         </div>
-                        <span>Member Benefit</span>
+                        <span>Member's Benefit</span>
                     </div>
                     <ChevronRight size={16} />
                 </div>

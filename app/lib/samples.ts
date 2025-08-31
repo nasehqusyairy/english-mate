@@ -5,7 +5,7 @@ export const confluences = [
         presenter: "John Doe",
         date: "20 Sep",
         time: "14.00",
-        audience: 30,
+        tickets: 30,
         tags: ["Writing", "Beginner"]
     },
     {
@@ -14,7 +14,7 @@ export const confluences = [
         presenter: "Fadilah Uhti Rianda",
         date: "15 Sep",
         time: "12.30",
-        audience: 24,
+        tickets: 24,
         tags: ["Speaking"],
         isJoined: true
     },
@@ -24,7 +24,7 @@ export const confluences = [
         presenter: "Jane Smith",
         date: "25 Sep",
         time: "10.00",
-        audience: 20,
+        tickets: 0,
         tags: ["Grammar", "Advanced", "Workshop", "other"]
     }
 ]
