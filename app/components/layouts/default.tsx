@@ -1,20 +1,53 @@
-import { Outlet } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
 import { Button } from "../ui/button";
-import { Bell, Book, GraduationCap, Home, MessageCircle, User } from "lucide-react";
+import { Bell, Book, GraduationCap, Home, MessageCircle, Plus, User } from "lucide-react";
+import { useEffect } from "react";
 
+
+const navItems = [
+    { to: "/confluences", icon: <GraduationCap /> },
+    { to: "/lessons", icon: <Book /> },
+    { to: "/", icon: <Home /> },
+    { to: "/notifications", icon: <Bell /> },
+    { to: "/profile", icon: <User /> },
+]
 
 export default () => {
+    const location = useLocation()
+
+    const isActive = (path: string) => {
+        if (path === "/") {
+            // khusus root, cocok kalau eksak "/"
+            return location.pathname === "/"
+        }
+        return location.pathname.startsWith(path)
+    }
+
+    useEffect(() => {
+        // Check for saved theme preference in localStorage
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+    }, []);
+
     return (
         <>
-
+            <Button size={"icon"} className="right-4 bottom-[calc(var(--navbar-height)+1rem)] fixed rounded-full">
+                <Plus />
+            </Button>
             <Outlet />
             <div className="app-footer-container">
                 <footer className="app-footer">
-                    <Button size={"lg"} variant={"ghost"}><GraduationCap /></Button>
-                    <Button size={"lg"} variant={"ghost"}><Book /></Button>
-                    <Button size={"lg"} variant={"default"}><Home /></Button>
-                    <Button size={"lg"} variant={"ghost"}><Bell /></Button>
-                    <Button size={"lg"} variant={"ghost"}><User /></Button>
+                    {navItems.map((item) => (
+                        <Button asChild key={item.to} variant={isActive(item.to) ? "default" : "ghost"} size="lg">
+                            <Link key={item.to} to={item.to}>
+                                {item.icon}
+                            </Link>
+                        </Button>
+                    ))}
                 </footer>
             </div>
         </>

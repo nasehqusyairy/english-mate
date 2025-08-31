@@ -83,6 +83,7 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.606 0.25 292.717);
   --navbar-height: 4rem;
+  --body-max-width: 400px;
 }
 
 .dark {
@@ -128,6 +129,12 @@
     @apply bg-background text-foreground;
   }
   
+  body,.app-footer {
+    width: clamp(375px, 100%, var(--body-max-width));
+    /* width: 375px; */
+    @apply mx-auto;
+  }
+  
   section {
     @apply mb-6;
   }
@@ -144,7 +151,9 @@
   
   .app-footer {
     @apply bg-background/50 backdrop-blur-md;
-    @apply fixed bottom-0 left-0 flex w-full justify-around border-t p-2;
+    @apply fixed bottom-0 left-0 flex justify-around border-t p-2;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .app-footer-container {

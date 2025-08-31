@@ -10,7 +10,7 @@ type LessonItemProps = {
 
 export default ({ tags, title, description, progress }: LessonItemProps) => {
     return (
-        <div className="gap-2 grid dark:bg-input/30 hover:shadow-md p-4 border hover:border-primary! dark:border-input rounded-2xl w-10/12 transition-shadow cursor-pointer shrink-0">
+        <div className="gap-2 grid dark:bg-input/30 hover:shadow-md p-4 border hover:border-primary! dark:border-input rounded-2xl w-8/12 transition-shadow cursor-pointer shrink-0">
             <div className="flex gap-1">
                 {/* show only two maximum */}
                 {tags.slice(0, 2).map((tag, index) => (
