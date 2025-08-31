@@ -9,7 +9,7 @@ export default ({ lessons }: { lessons: Lesson[] }) => {
     return (
         <div>
             {lessons.map((lesson, index) => (
-                <div className="px-4 py-2 not-last:border-b" key={index}>
+                <div className="p-4 not-last:border-b" key={index}>
                     <div className="text-muted dark:text-foreground text-xs">
                         <TagContainer tags={lesson.tags} />
                         <div className="my-2">
@@ -21,7 +21,7 @@ export default ({ lessons }: { lessons: Lesson[] }) => {
                         <p className="mb-2">{lesson.description}</p>
                         {lesson.progress && (
                             <>
-                                <p>{lesson.progress}%</p>
+                                <p className="mb-2">{lesson.progress}%</p>
                                 <Progress value={lesson.progress} />
                             </>
                         )}
