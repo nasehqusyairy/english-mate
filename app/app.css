@@ -182,7 +182,7 @@
   .fab {
     bottom: calc(var(--navbar-height) + 1rem);
     transform: var(--fab-x-position);
-    @apply  left-1/2 fixed rounded-full!;
+    @apply z-30 left-1/2 fixed rounded-full!;
   }
   
   .fab.active {
