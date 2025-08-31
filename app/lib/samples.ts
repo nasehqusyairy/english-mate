@@ -31,21 +31,26 @@ export const confluences = [
 
 export const lessons = [
     {
+        id: "1",
         title: "Simple Present Tense",
+        author: "Jane Doe",
         description: "This lesson will teach you about the usage of simple present tense in daily conversation.",
         progress: 75,
         tags: ["Grammar", "Beginner"]
     },
     {
+        id: "2",
+        author: "Fadilah Uhti Rianda",
         title: "Past Continuous Tense",
         description: "Learn how to describe actions that were ongoing in the past.",
-        progress: 50,
-        tags: ["Grammar", "Intermediate"]
+        progress: 25,
+        tags: ["Grammar", "Intermediate", "Other"]
     },
     {
+        id: "3",
+        author: "Jane Doe",
         title: "Future Perfect Tense",
         description: "Understand how to express actions that will be completed in the future.",
-        progress: 25,
         tags: ["Grammar", "Advanced"]
     }
 ]

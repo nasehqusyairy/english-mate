@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="app-header">
+      <header className="flex justify-between items-center p-4 border-b">
         <div className="brand">
           <h1>English Mate</h1>
         </div>
@@ -52,9 +52,9 @@ export default function Home() {
           <Button size={"icon"} variant={"outline"} onClick={toggleTheme}>
             <SunMoon />
           </Button>
-          <Button size={"icon"} variant={"outline"}>
+          {/* <Button size={"icon"} variant={"outline"}>
             <MessageCircle />
-          </Button>
+          </Button> */}
         </div>
       </header>
       <main className="p-4">
@@ -69,7 +69,7 @@ export default function Home() {
 
         <section>
           <div className="flex justify-between mb-4">
-            <h1 className="font-bold">Upcoming Confluences</h1>
+            <h1 className="font-bold">Upcoming Confluence</h1>
             <Link to="/confluences" className="text-primary text-sm">View all</Link>
           </div>
           <div className="flex flex-nowrap gap-4 overflow-x-auto">
@@ -85,7 +85,7 @@ export default function Home() {
             <Link to="/lessons" className="text-primary text-sm">View all</Link>
           </div>
           <div className="flex flex-nowrap gap-4 overflow-x-auto">
-            {lessons.map((lesson, index) => (
+            {lessons.filter(lesson => lesson.progress).map((lesson, index) => (
               <LessonItem key={'lesson-' + index} {...lesson} />
             ))}
           </div>

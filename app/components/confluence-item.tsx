@@ -9,7 +9,7 @@ type ConfluenceItemProps = {
 
 export default ({ confluence }: ConfluenceItemProps) => {
     return (
-        <div className="dark:bg-input/30 hover:shadow-md p-4 border hover:border-primary! dark:border-input rounded-2xl w-8/12 transition-shadow cursor-pointer shrink-0">
+        <div className="dark:bg-input/30 p-4 border dark:border-input rounded-2xl w-8/12 shrink-0">
             <div className="relative mb-4">
                 <div className="top-0 left-0 absolute p-2">
                     <TagContainer tags={confluence.tags} />
@@ -23,8 +23,8 @@ export default ({ confluence }: ConfluenceItemProps) => {
 
             <div className="text-muted">
                 <div className="mb-4">
-                    <h1 className="mb-2 font-bold text-foreground truncate">
-                        {confluence.title}
+                    <h1 className="mb-2 font-bold text-foreground hover:underline truncate">
+                        <a href="#">{confluence.title}</a>
                     </h1>
                     <p className="text-sm">{confluence.presenter}</p>
                 </div>

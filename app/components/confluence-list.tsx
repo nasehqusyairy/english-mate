@@ -20,7 +20,9 @@ export default ({ confluences }: { confluences: Confluence[] }) => {
                     <div className="w-[calc(calc(100%*calc(8/12))-1rem)] text-muted dark:text-foreground text-xs">
                         <TagContainer tags={confluence.tags} />
                         <div className="my-2">
-                            <h1 className="font-bold text-foreground text-sm hover:underline truncate cursor-pointer">{confluence.title}</h1>
+                            <h1 className="font-bold text-foreground text-sm truncate">
+                                <a href="#" className="hover:underline">{confluence.title}</a>
+                            </h1>
                             <p className="truncate">{confluence.presenter}</p>
                         </div>
                         <div className="flex justify-between">

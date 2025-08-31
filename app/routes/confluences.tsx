@@ -30,7 +30,7 @@ export default () => {
                                 <Link to="/confluences">All</Link>
                             </TabsTrigger>
                             <TabsTrigger asChild value="joined">
-                                <Link to="/confluences/joined">Joined</Link>
+                                <Link to="/confluences/liked">Liked</Link>
                             </TabsTrigger>
                             <TabsTrigger asChild value="created">
                                 <Link to="/confluences/created">Created</Link>

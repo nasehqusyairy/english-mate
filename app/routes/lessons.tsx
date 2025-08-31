@@ -1,10 +1,14 @@
 import { Search, Settings2 } from "lucide-react";
-import { Form } from "react-router";
+import { Form, Link, Outlet, useOutlet } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { confluences, lessons } from "~/lib/samples";
+import LessonList from "~/components/lesson-list";
+
 
 export default () => {
+    const outlet = useOutlet();
     return (
         <>
             <header className="p-4 border-b">
@@ -18,18 +22,25 @@ export default () => {
                     </Button>
                 </Form>
             </header>
-            <main className="p-4">
+            <main>
                 <Tabs defaultValue="all">
-                    {/* <div className="flex justify-center w-full"> */}
-                    <TabsList className="w-full">
-                        <TabsTrigger value="all">All</TabsTrigger>
-                        <TabsTrigger value="joined">Joined</TabsTrigger>
-                        <TabsTrigger value="created">Created</TabsTrigger>
-                    </TabsList>
-                    {/* </div> */}
-                    <TabsContent value="all">View all your lessons here.</TabsContent>
-                    <TabsContent value="joined">View your joined lessons here.</TabsContent>
-                    <TabsContent value="created">View your created lessons here.</TabsContent>
+                    <div className="px-4 pt-4">
+                        <TabsList className="mb-2 w-full">
+                            <TabsTrigger asChild value="all">
+                                <Link to="/lessons">All</Link>
+                            </TabsTrigger>
+                            <TabsTrigger asChild value="progress">
+                                <Link to="/lessons/progress">Progress</Link>
+                            </TabsTrigger>
+                            <TabsTrigger asChild value="done">
+                                <Link to="/lessons/done">Done</Link>
+                            </TabsTrigger>
+                            <TabsTrigger asChild value="created">
+                                <Link to="/lessons/created">Created</Link>
+                            </TabsTrigger>
+                        </TabsList>
+                    </div>
+                    {outlet ? <Outlet /> : <LessonList {...{ lessons }} />}
                 </Tabs>
             </main>
         </>

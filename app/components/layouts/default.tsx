@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from "react-router";
 import { Button } from "../ui/button";
-import { Bell, Book, GraduationCap, Home, MessageCircle, Plus, User } from "lucide-react";
+import { Bell, Book, GraduationCap, Home, User } from "lucide-react";
 import { useEffect } from "react";
 
 
@@ -35,12 +35,9 @@ export default () => {
 
     return (
         <>
-            <Button size={"icon"} className="right-4 bottom-[calc(var(--navbar-height)+1rem)] fixed rounded-full">
-                <Plus />
-            </Button>
             <Outlet />
-            <div className="app-footer-container">
-                <footer className="app-footer">
+            <footer className="app-footer-container">
+                <div className="app-footer">
                     {navItems.map((item) => (
                         <Button asChild key={item.to} variant={isActive(item.to) ? "default" : "ghost"} size="lg">
                             <Link key={item.to} to={item.to}>
@@ -48,8 +45,8 @@ export default () => {
                             </Link>
                         </Button>
                     ))}
-                </footer>
-            </div>
+                </div>
+            </footer>
         </>
     );
 }
