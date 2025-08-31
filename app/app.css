@@ -136,7 +136,7 @@
   }
   
   section {
-    @apply mb-6;
+    @apply mb-4;
   }
   
   .brand {
@@ -159,7 +159,7 @@
   
   .app-header {
     @apply bg-background/50 backdrop-blur-md;
-    @apply fixed top-0 border-b p-2;
+    @apply fixed top-0 border-b p-4;
     left: 50%;
     transform: translateX(-50%);
   }

@@ -14,6 +14,7 @@ export default [
                 route('created', "routes/lessons/created.tsx"),
             ]),
             route('/notifications', "routes/notifications.tsx"),
+            route('/profile', "routes/profile.tsx"),
         ])
     ])
 ] satisfies RouteConfig;
