@@ -8,7 +8,7 @@ export default ({ confluences }: { confluences: Confluence[] }) => {
     return (
         <div>
             {confluences.map((confluence, index) => (
-                <div className="flex justify-between items-center px-4 py-2 not-last:border-b" key={index}>
+                <div className="flex justify-between items-center p-4 not-last:border-b" key={index}>
                     <div className="relative w-4/12">
                         <div className="top-0 left-0 absolute p-2">
                             <Button size={"icon"} className={"rounded-full" + (confluence.isJoined ? '' : ' bg-black/50')}>
