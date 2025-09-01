@@ -44,7 +44,7 @@ export default () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.25 }}
             onAnimationStart={() => setIsAnimating(true)}
             onAnimationComplete={() => setIsAnimating(false)}
         >
@@ -62,17 +62,15 @@ export default () => {
             <footer className="app-footer-container">
                 <div className="app-footer">
                     {navItems.map((item) => (
-                        <div className="relative flex flex-col items-center gap-1 w-1/5" key={item.to}>
-                            <Button asChild variant={isActive(item.to) ? "default" : "ghost"} size="icon">
-                                <Link key={item.to} to={item.to} className="flex!">
-                                    {item.icon}
-                                </Link>
+                        <Link to={item.to} className="relative flex flex-col items-center gap-1 w-1/5" key={item.to}>
+                            <Button variant={isActive(item.to) ? "default" : "ghost"} size="icon">
+                                {item.icon}
+                                {item.title === "Inbox" && (
+                                    <Badge className="-top-1 right-2 absolute" variant={'destructive'}>2</Badge>
+                                )}
                             </Button>
                             <span className="text-xs">{item.title}</span>
-                            {item.title === "Inbox" && (
-                                <Badge className="-top-1 right-2 absolute" variant={'destructive'}>2</Badge>
-                            )}
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </footer>

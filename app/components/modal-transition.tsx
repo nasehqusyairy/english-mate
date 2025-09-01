@@ -17,7 +17,7 @@ export default ({ children }: { children: React.ReactNode }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.25 }}
             onAnimationStart={() => setIsAnimating(true)}
             onAnimationComplete={() => setIsAnimating(false)}
         >
