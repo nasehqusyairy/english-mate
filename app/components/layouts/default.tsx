@@ -3,14 +3,15 @@ import { Button } from "../ui/button";
 import { Bell, Book, GraduationCap, Home, User } from "lucide-react";
 import { useEffect } from "react";
 import { Progress } from "../ui/progress";
+import { Badge } from "../ui/badge";
 
 
 const navItems = [
-    { to: "/confluences", icon: <GraduationCap /> },
-    { to: "/lessons", icon: <Book /> },
-    { to: "/", icon: <Home /> },
-    { to: "/notifications", icon: <Bell /> },
-    { to: "/profile", icon: <User /> },
+    { title: 'Meetings', to: "/meetings", icon: <GraduationCap /> },
+    { title: 'Lessons', to: "/lessons", icon: <Book /> },
+    { title: 'Home', to: "/", icon: <Home /> },
+    { title: 'Inbox', to: "/notifications", icon: <Bell /> },
+    { title: 'Profile', to: "/profile", icon: <User /> },
 ]
 
 export default () => {
@@ -43,11 +44,17 @@ export default () => {
             <footer className="app-footer-container">
                 <div className="app-footer">
                     {navItems.map((item) => (
-                        <Button asChild key={item.to} variant={isActive(item.to) ? "default" : "ghost"} size="lg">
-                            <Link key={item.to} to={item.to}>
-                                {item.icon}
-                            </Link>
-                        </Button>
+                        <div className="relative flex flex-col items-center gap-1 w-1/5" key={item.to}>
+                            <Button asChild variant={isActive(item.to) ? "default" : "ghost"} size="icon">
+                                <Link key={item.to} to={item.to} className="flex!">
+                                    {item.icon}
+                                </Link>
+                            </Button>
+                            <span className="text-xs">{item.title}</span>
+                            {item.title === "Inbox" && (
+                                <Badge className="-top-1 right-2 absolute" variant={'destructive'}>2</Badge>
+                            )}
+                        </div>
                     ))}
                 </div>
             </footer>

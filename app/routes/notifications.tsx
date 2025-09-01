@@ -8,7 +8,7 @@ export default () => {
                     <p className="mb-4 text-muted text-sm">
                         We're glad to have you here. Explore and enjoy your learning journey! Here you can find various resources to help you improve your English skills.
                     </p>
-                    <a href="#" className="text-primary text-sm hover:underline">Go to Confluences</a>
+                    <a href="#" className="text-primary text-sm hover:underline">Go to Meetings</a>
                 </div>
                 <div className="p-4 not-last:border-b">
                     <span className="text-muted text-xs">31 Aug 2025 | 15.42</span>

@@ -74,7 +74,7 @@ export default () => {
                 </div>
             </div>
 
-            <div className="px-4 text-muted text-xs">
+            <div className="p-4 text-muted text-xs">
                 <p>Version 1.0.0</p>
                 <p>© 2023 English Mate. All rights reserved.</p>
             </div>

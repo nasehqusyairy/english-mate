@@ -1,4 +1,4 @@
-import type { Confluence } from "~/models/confluence"
+import type { Meeting } from "~/models/meeting"
 import TagContainer from "./tag-container";
 import { Calendar, Clock, Heart, Users } from "lucide-react";
 import { Button } from "./ui/button";

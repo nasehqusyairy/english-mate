@@ -3,8 +3,8 @@ import { Form, Link, Outlet, useLocation, useOutlet } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { confluences } from "~/lib/samples";
-import ConfluenceList from "~/components/confluence-list";
+import { meetings } from "~/lib/samples";
+import MeetingList from "~/components/meeting-list";
 
 
 export default () => {
@@ -29,17 +29,17 @@ export default () => {
                     <div className="px-4 pt-4">
                         <TabsList className="w-full">
                             <TabsTrigger asChild value="all">
-                                <Link to="/confluences">All</Link>
+                                <Link to="/meetings">All</Link>
                             </TabsTrigger>
                             <TabsTrigger asChild value="registered">
-                                <Link to="/confluences/registered">Registered</Link>
+                                <Link to="/meetings/registered">Registered</Link>
                             </TabsTrigger>
                             <TabsTrigger asChild value="created">
-                                <Link to="/confluences/created">Created</Link>
+                                <Link to="/meetings/created">Created</Link>
                             </TabsTrigger>
                         </TabsList>
                     </div>
-                    {outlet ? <Outlet /> : <ConfluenceList {...{ confluences }} />}
+                    {outlet ? <Outlet /> : <MeetingList {...{ meetings }} />}
                 </Tabs>
             </main>
         </>

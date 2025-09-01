@@ -3,7 +3,7 @@ import { Form, Link, Outlet, useLocation, useOutlet } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { confluences, lessons } from "~/lib/samples";
+import { meetings, lessons } from "~/lib/samples";
 import LessonList from "~/components/lesson-list";
 
 

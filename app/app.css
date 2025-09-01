@@ -82,7 +82,7 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.606 0.25 292.717);
-  --navbar-height: 4rem;
+  --navbar-height: 5rem;
   --body-width: clamp(375px, 100%, 400px);
   --fab-x-position: translateX(calc(calc(calc(var(--body-width)/2) - 1rem) - 100%));
 }
@@ -193,7 +193,7 @@
     bottom: calc(var(--navbar-height) + 9rem);
   }
   
-  .confluence-fab {
+  .meeting-fab {
     bottom: calc(var(--navbar-height) + 6rem);
   }
   

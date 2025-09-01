@@ -1,10 +1,10 @@
 import { Book, GraduationCap, Medal, MessageCircle, Star, SunMoon, Zap } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import LessonItem from "~/components/lesson-item";
-import ConfluenceItem from "~/components/confluence-item";
+import MeetingItem from "~/components/meeting-item";
 import PersonalOverview from "~/components/personal-overview";
 import { Link } from "react-router";
-import { confluences, lessons } from "~/lib/samples";
+import { meetings, lessons } from "~/lib/samples";
 
 const overviews = [
   {
@@ -14,7 +14,7 @@ const overviews = [
   },
   {
     value: 58,
-    title: "Confluence",
+    title: "Meeting",
     icon: GraduationCap
   },
   {
@@ -69,12 +69,12 @@ export default function Home() {
 
         <section>
           <div className="flex justify-between mb-4">
-            <h1 className="font-bold">Upcoming Confluence</h1>
-            <Link to="/confluences" className="text-primary text-sm">View all</Link>
+            <h1 className="font-bold">Upcoming Meeting</h1>
+            <Link to="/meetings" className="text-primary text-sm">View all</Link>
           </div>
           <div className="flex flex-nowrap gap-4 overflow-x-auto">
-            {confluences.map((confluence, index) => (
-              <ConfluenceItem key={'confluence-' + index} {...{ confluence }} />
+            {meetings.map((meeting, index) => (
+              <MeetingItem key={'meeting-' + index} {...{ meeting }} />
             ))}
           </div>
         </section>

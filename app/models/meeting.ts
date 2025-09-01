@@ -1,4 +1,4 @@
-export type Confluence = {
+export type Meeting = {
     id: string;
     title: string;
     presenter: string;

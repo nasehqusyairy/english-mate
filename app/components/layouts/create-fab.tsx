@@ -10,7 +10,7 @@ export default () => {
             <Button size={"icon"} className={"fab " + (isActive ? "lesson-fab" : "")}>
                 <Book />
             </Button>
-            <Button size={"icon"} className={"fab " + (isActive ? "confluence-fab" : "")}>
+            <Button size={"icon"} className={"fab " + (isActive ? "meeting-fab" : "")}>
                 <GraduationCap />
             </Button>
             <Button size={"icon"} variant={isActive ? "secondary" : "default"} className={"fab " + (isActive ? "active" : "")} onClick={() => setIsActive(!isActive)}>

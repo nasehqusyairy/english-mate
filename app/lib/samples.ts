@@ -1,4 +1,4 @@
-export const confluences = [
+export const meetings = [
     {
         id: "2",
         title: "Writing Skills Workshop",

@@ -4,9 +4,9 @@ export default [
     layout('./components/layouts/default.tsx', [
         layout('./components/layouts/create-fab.tsx', [
             index("routes/home.tsx"),
-            route('/confluences', "routes/confluences.tsx", [
-                route('registered', "routes/confluences/registered.tsx"),
-                route('created', "routes/confluences/created.tsx"),
+            route('/meetings', "routes/meetings.tsx", [
+                route('registered', "routes/meetings/registered.tsx"),
+                route('created', "routes/meetings/created.tsx"),
             ]),
             route('/lessons', "routes/lessons.tsx", [
                 route('progress', "routes/lessons/progress.tsx"),
