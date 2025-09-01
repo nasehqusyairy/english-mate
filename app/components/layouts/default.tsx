@@ -42,14 +42,14 @@ export default () => {
     const [isAnimating, setIsAnimating] = useState(false);
 
     const pageVariants: Variants = {
-        initial: { scale: 0.9, opacity: 0, height: '100vh', overflow: 'hidden' },
-        animate: { scale: 1, opacity: 1 },
-        exit: { scale: 0.9, opacity: 0 }
+        initial: { x: "-25%", opacity: 0 },
+        animate: { x: "0%", opacity: 1 },
+        exit: { x: "-25%", opacity: 0 }
     };
 
     return (
         <motion.div
-            className={'main-transition ' + (isAnimating ? "animating" : "h-auto! overflow-auto!")}
+            className={'main-transition ' + (isAnimating ? "animating" : "")}
             variants={pageVariants}
             initial="initial"
             animate="animate"

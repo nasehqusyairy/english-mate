@@ -130,8 +130,8 @@
     @apply bg-background text-foreground;
   }
   
-  body:has(.modal-transition.animating) {
-    @apply overflow-hidden;
+  body:has(.modal-transition.animating),body:has(.main-transition.animating) {
+    @apply overflow-x-hidden;
   }
   
   body,.app-footer,.app-header {
