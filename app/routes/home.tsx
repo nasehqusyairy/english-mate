@@ -1,10 +1,11 @@
-import { Book, GraduationCap, Medal, MessageCircle, Star, SunMoon, Ticket, Zap } from "lucide-react";
+import { Bell, Book, GraduationCap, Medal, MessageCircle, Star, SunMoon, Ticket, Zap } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import LessonItem from "~/components/lesson-item";
 import MeetingItem from "~/components/meeting-item";
 import PersonalOverview from "~/components/personal-overview";
 import { Link } from "react-router";
 import { meetings, lessons } from "~/lib/samples";
+import { Badge } from "~/components/ui/badge";
 
 /**
  * Rank:
@@ -25,7 +26,7 @@ const overviews = [
   },
   {
     value: 58,
-    title: "Meeting",
+    title: "Meetings",
     icon: GraduationCap,
     progress: 58
   },
@@ -45,17 +46,6 @@ const overviews = [
 
 export default function Home() {
 
-  const toggleTheme = () => {
-    // jika di localStorage ada key theme = dark, maka berikan class dark pada body
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      localStorage.setItem("theme", "dark");
-      document.body.classList.add("dark");
-    }
-  }
-
   return (
     <>
       <header className="flex justify-between items-center p-4 pt-3 border-b">
@@ -67,8 +57,11 @@ export default function Home() {
             <Ticket />
             <span>200</span>
           </Button>
-          <Button size={"icon"} variant={"outline"} onClick={toggleTheme}>
-            <SunMoon />
+          <Button asChild className="relative" variant={"outline"}>
+            <Link to={'/notifications'}>
+              <Bell />
+              <Badge className="-top-1 -right-2 absolute" variant={'destructive'}>2</Badge>
+            </Link>
           </Button>
         </div>
       </header>

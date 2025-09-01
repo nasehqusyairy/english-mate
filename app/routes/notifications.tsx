@@ -1,5 +1,9 @@
 import { Link } from "react-router"
 
+export const handle = {
+    title: "Notifications"
+}
+
 export default () => {
     return (
         <>

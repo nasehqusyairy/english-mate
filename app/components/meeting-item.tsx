@@ -2,6 +2,7 @@ import { Calendar, Clock, Ticket } from "lucide-react"
 import TagContainer from "./tag-container"
 import PlaceholderImage from "~/assets/tools-3d.png"
 import type { Meeting } from "~/models/meeting"
+import { Link } from "react-router"
 
 type MeetingItemProps = {
     meeting: Meeting
@@ -24,10 +25,10 @@ export default ({ meeting }: MeetingItemProps) => {
                         <TagContainer tags={meeting.tags} />
                     </div>
                     <h1 className="mb-2 font-bold text-foreground hover:underline truncate">
-                        <a href="#">{meeting.title}</a>
+                        <Link to={'/meeting-preview'}>{meeting.title}</Link>
                     </h1>
                     <p className="text-sm truncate">
-                        by <a href="#" className="text-primary hover:underline">{meeting.presenter}</a>
+                        by <Link to={'/view-profile'} className="text-primary hover:underline">{meeting.presenter}</Link>
                     </p>
                 </div>
 

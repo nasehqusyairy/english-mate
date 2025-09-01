@@ -13,11 +13,17 @@ export default [
                 route('done', "routes/lessons/done.tsx"),
                 route('created', "routes/lessons/created.tsx"),
             ]),
-            route('/notifications', "routes/notifications.tsx"),
             route('/profile', "routes/profile.tsx"),
+            route('/leaderboard', "routes/leaderboard.tsx"),
         ]),
 
         layout('./components/layouts/modal.tsx', [
+            route('/notifications', "routes/notifications.tsx"),
+
+            route('/view-profile', "routes/view-profile.tsx"),
+            route('/meeting-preview', "routes/meeting-preview.tsx"),
+            route('/lesson-preview', "routes/lesson-preview.tsx"),
+
             route('/profile/help', './routes/profile/help.tsx'),
             route('/profile/edit', './routes/profile/edit.tsx'),
             route('/profile/change-password', './routes/profile/change-password.tsx'),

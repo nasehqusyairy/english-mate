@@ -1,6 +1,7 @@
 import type { Lesson } from "~/models/lesson"
 import { Badge } from "./ui/badge"
 import { Progress } from "./ui/progress"
+import { Link } from "react-router"
 
 export default ({ tags, title, description, progress, author }: Lesson) => {
     return (
@@ -19,10 +20,10 @@ export default ({ tags, title, description, progress, author }: Lesson) => {
                 )}
             </div>
             <h2 className="font-bold hover:underline truncate">
-                <a href="#">{title}</a>
+                <Link to={'/lesson-preview'}>{title}</Link>
             </h2>
             <p className="text-sm truncate">
-                by <a href="#" className="text-primary hover:underline">{author}</a>
+                by <Link to={'/view-profile'} className="text-primary hover:underline">{author}</Link>
             </p>
             <p className="text-muted">
                 {description}

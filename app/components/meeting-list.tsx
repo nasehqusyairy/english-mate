@@ -3,6 +3,7 @@ import PlaceholderImage from "~/assets/tools-3d.png";
 import TagContainer from "./tag-container";
 import { Calendar, Check, Clock, Ticket, Users } from "lucide-react";
 import { Badge } from "./ui/badge";
+import { Link } from "react-router";
 
 export default ({ meetings }: { meetings: Meeting[] }) => {
     return (
@@ -25,10 +26,10 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                         <TagContainer tags={meeting.tags} />
                         <div className="my-2">
                             <h1 className="font-bold text-foreground text-sm truncate">
-                                <a href="#" className="hover:underline">{meeting.title}</a>
+                                <Link to={'/meeting-preview'} className="hover:underline">{meeting.title}</Link>
                             </h1>
                             <p className="mb-2 truncate">
-                                by <a href="#" className="text-primary hover:underline">{meeting.presenter}</a>
+                                by <Link to={'/view-profile'} className="text-primary hover:underline">{meeting.presenter}</Link>
                             </p>
                             <p className="flex items-center gap-1">
 

@@ -1,10 +1,24 @@
-import { ChevronRight, FileText, HelpCircle, Key, LogOut, Medal, User } from "lucide-react"
+import { ChevronRight, FileText, HelpCircle, Key, LogOut, Medal, SunMoon, User } from "lucide-react"
 import { Link } from "react-router"
 import ProfileAction from "~/components/profile-action"
 import { Button } from "~/components/ui/button"
 import UpgradeProCard from "~/components/ui/upgrade-pro-card"
 
 const actions = [
+    {
+        title: "Toggle Dark Mode",
+        icon: SunMoon,
+        onClick: () => {
+            // jika di localStorage ada key theme = dark, maka berikan class dark pada body
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+                document.body.classList.add("dark");
+            }
+        }
+    },
     {
         title: "Change Password",
         icon: Key,
@@ -61,7 +75,7 @@ export default () => {
 
             <div className="text-muted text-sm">
                 {actions.map(action => (
-                    <ProfileAction key={action.title} title={action.title} icon={action.icon} to={action.to} />
+                    <ProfileAction key={action.title} {...action} />
                 ))}
             </div>
 

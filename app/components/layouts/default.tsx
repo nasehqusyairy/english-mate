@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation, useNavigation } from "react-router";
 import { Button } from "../ui/button";
-import { Bell, Book, GraduationCap, Home, Plus, User } from "lucide-react";
+import { Bell, Book, ChartBar, ChartColumnBig, GraduationCap, Home, Plus, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Progress } from "../ui/progress";
 import { Badge } from "../ui/badge";
@@ -11,7 +11,7 @@ const navItems = [
     { title: 'Meetings', to: "/meetings", icon: <GraduationCap /> },
     { title: 'Lessons', to: "/lessons", icon: <Book /> },
     { title: 'Home', to: "/", icon: <Home /> },
-    { title: 'Inbox', to: "/notifications", icon: <Bell /> },
+    { title: 'Leaderboard', to: "/leaderboard", icon: <ChartColumnBig /> },
     { title: 'Profile', to: "/profile", icon: <User /> },
 ]
 
@@ -65,9 +65,6 @@ export default () => {
                         <Link to={item.to} className="relative flex flex-col items-center gap-1 w-1/5" key={item.to}>
                             <Button variant={isActive(item.to) ? "default" : "ghost"} size="icon">
                                 {item.icon}
-                                {item.title === "Inbox" && (
-                                    <Badge className="-top-1 right-2 absolute" variant={'destructive'}>2</Badge>
-                                )}
                             </Button>
                             <span className="text-xs">{item.title}</span>
                         </Link>
