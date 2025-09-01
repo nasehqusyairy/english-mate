@@ -1,6 +1,37 @@
 import { ChevronRight, FileText, HelpCircle, Key, LogOut, Medal, User } from "lucide-react"
+import { Link } from "react-router"
+import ProfileAction from "~/components/profile-action"
 import { Button } from "~/components/ui/button"
 import UpgradeProCard from "~/components/ui/upgrade-pro-card"
+
+const actions = [
+    {
+        title: "Change Password",
+        icon: Key,
+        to: "/profile/change-password"
+    },
+    {
+        title: "Transaction History",
+        icon: FileText,
+        to: "/profile/transaction-history"
+    },
+    {
+        title: "Member's Benefit",
+        icon: Medal,
+        to: "/profile/members-benefit"
+    },
+    {
+        title: "Help",
+        icon: HelpCircle,
+        to: "/profile/help"
+    }, {
+        title: "Log Out",
+        icon: LogOut,
+        onClick: () => {
+            // Handle log out logic here
+        }
+    }
+]
 
 export default () => {
     return (
@@ -17,7 +48,9 @@ export default () => {
                                 <Medal size={16} /> Basic
                             </p>
                         </div>
-                        <Button className="shrink-0">Edit</Button>
+                        <Button className="shrink-0">
+                            <Link to="/profile/edit">Edit</Link>
+                        </Button>
                     </div>
                 </div>
             </section>
@@ -26,52 +59,10 @@ export default () => {
                 <UpgradeProCard />
             </section>
 
-            <div className="mb-4 text-muted text-sm">
-                <div className="flex justify-between items-center hover:bg-muted/10 active:bg-muted/15 p-4 not-last:border-b cursor-pointer">
-                    <div className="flex gap-4">
-                        <div className="flex justify-center items-center bg-primary/10 rounded size-6 text-primary shrink-0">
-                            <Key size={16} />
-                        </div>
-                        <span>Change Password</span>
-                    </div>
-                    <ChevronRight size={16} />
-                </div>
-                <div className="flex justify-between items-center hover:bg-muted/10 active:bg-muted/15 p-4 not-last:border-b cursor-pointer">
-                    <div className="flex gap-4">
-                        <div className="flex justify-center items-center bg-primary/10 rounded size-6 text-primary shrink-0">
-                            <FileText size={16} />
-                        </div>
-                        <span>Transaction History</span>
-                    </div>
-                    <ChevronRight size={16} />
-                </div>
-                <div className="flex justify-between items-center hover:bg-muted/10 active:bg-muted/15 p-4 not-last:border-b cursor-pointer">
-                    <div className="flex gap-4">
-                        <div className="flex justify-center items-center bg-primary/10 rounded size-6 text-primary shrink-0">
-                            <Medal size={16} />
-                        </div>
-                        <span>Member's Benefit</span>
-                    </div>
-                    <ChevronRight size={16} />
-                </div>
-                <div className="flex justify-between items-center hover:bg-muted/10 active:bg-muted/15 p-4 not-last:border-b cursor-pointer">
-                    <div className="flex gap-4">
-                        <div className="flex justify-center items-center bg-primary/10 rounded size-6 text-primary shrink-0">
-                            <HelpCircle size={16} />
-                        </div>
-                        <span>Help</span>
-                    </div>
-                    <ChevronRight size={16} />
-                </div>
-                <div className="flex justify-between items-center hover:bg-muted/10 active:bg-muted/15 p-4 not-last:border-b cursor-pointer">
-                    <div className="flex gap-4">
-                        <div className="flex justify-center items-center bg-primary/10 rounded size-6 text-primary shrink-0">
-                            <LogOut size={16} />
-                        </div>
-                        <span>Log Out</span>
-                    </div>
-                    <ChevronRight size={16} />
-                </div>
+            <div className="text-muted text-sm">
+                {actions.map(action => (
+                    <ProfileAction key={action.title} title={action.title} icon={action.icon} to={action.to} />
+                ))}
             </div>
 
             <div className="p-4 text-muted text-xs">

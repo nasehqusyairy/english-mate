@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,7 +35,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <AnimatePresence mode="wait">
+          {children}
+        </AnimatePresence>
         <ScrollRestoration />
         <Scripts />
       </body>

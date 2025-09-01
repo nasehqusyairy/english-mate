@@ -130,6 +130,10 @@
     @apply bg-background text-foreground;
   }
   
+  body:has(.modal-transition.animating) {
+    @apply overflow-hidden;
+  }
+  
   body,.app-footer,.app-header {
     width: var(--body-width);
     /* width: 375px; */
@@ -197,7 +201,7 @@
     bottom: calc(var(--navbar-height) + 6rem);
   }
   
-  [data-slot="button"] {
+  [data-slot="button"],button,a {
     @apply cursor-pointer;
   }
 }

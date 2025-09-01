@@ -1,9 +1,10 @@
 import { Link, Outlet, useLocation, useNavigation } from "react-router";
 import { Button } from "../ui/button";
-import { Bell, Book, GraduationCap, Home, User } from "lucide-react";
-import { useEffect } from "react";
+import { Bell, Book, GraduationCap, Home, Plus, User } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Progress } from "../ui/progress";
 import { Badge } from "../ui/badge";
+import { motion, type Variants } from 'framer-motion';
 
 
 const navItems = [
@@ -37,8 +38,35 @@ export default () => {
         }
     }, []);
 
+    const [isFABActive, setIsFABActive] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const pageVariants: Variants = {
+        initial: { scale: 0.9, opacity: 0, height: '100vh', overflow: 'hidden' },
+        animate: { scale: 1, opacity: 1 },
+        exit: { scale: 0.9, opacity: 0 }
+    };
+
     return (
-        <>
+        <motion.div
+            className={'main-transition ' + (isAnimating ? "animating" : "h-auto! overflow-auto!")}
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.25 }}
+            onAnimationStart={() => setIsAnimating(true)}
+            onAnimationComplete={() => setIsAnimating(false)}
+        >
+            <Button size={"icon"} className={"fab " + (isFABActive ? "lesson-fab" : "")}>
+                <Book />
+            </Button>
+            <Button size={"icon"} className={"fab " + (isFABActive ? "meeting-fab" : "")}>
+                <GraduationCap />
+            </Button>
+            <Button size={"icon"} variant={isFABActive ? "secondary" : "default"} className={"fab " + (isFABActive ? "active" : "")} onClick={() => setIsFABActive(!isFABActive)}>
+                <Plus />
+            </Button>
             <Progress className="bg-background rounded-none" value={navigation.state === "loading" ? 75 : 0} />
             <Outlet />
             <footer className="app-footer-container">
@@ -58,6 +86,6 @@ export default () => {
                     ))}
                 </div>
             </footer>
-        </>
+        </motion.div>
     );
 }
