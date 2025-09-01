@@ -67,7 +67,7 @@ export default () => {
 
             <div className="p-4 text-muted text-xs">
                 <p>Version 1.0.0</p>
-                <p>© 2023 English Mate. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} English Mate. All rights reserved.</p>
             </div>
 
         </main>

@@ -49,7 +49,7 @@ export default function Home() {
           <h1>English Mate</h1>
         </div>
         <div className="flex gap-1">
-          <Button variant={"outline"} className="bg-yellow-500/10 text-yellow-500">
+          <Button variant={"outline"} className="bg-yellow-500/10 border-yellow-500 text-yellow-500">
             <Ticket />
             <span>200</span>
           </Button>
