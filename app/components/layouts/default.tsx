@@ -28,16 +28,6 @@ export default () => {
         return location.pathname.startsWith(path)
     }
 
-    useEffect(() => {
-        // Check for saved theme preference in localStorage
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark");
-        } else {
-            document.body.classList.remove("dark");
-        }
-    }, []);
-
     const [isFABActive, setIsFABActive] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -54,7 +44,7 @@ export default () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.5 }}
             onAnimationStart={() => setIsAnimating(true)}
             onAnimationComplete={() => setIsAnimating(false)}
         >
