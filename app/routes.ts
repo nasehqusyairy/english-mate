@@ -19,6 +19,10 @@ export default [
 
         layout('./components/layouts/modal.tsx', [
             route('/profile/help', './routes/profile/help.tsx'),
+            route('/profile/edit', './routes/profile/edit.tsx'),
+            route('/profile/change-password', './routes/profile/change-password.tsx'),
+            route('/profile/transaction-history', './routes/profile/transaction-history.tsx'),
+            route('/profile/members-benefits', './routes/profile/members-benefits.tsx'),
         ]),
     ])
 

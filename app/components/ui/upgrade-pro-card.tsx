@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import { Button } from "./button"
 
 export default () => {
@@ -13,7 +14,9 @@ export default () => {
                 Get access to all premium features and content
             </p>
             <div className="action">
-                <Button className="bg-white hover:bg-gray-100 text-black">Upgrade now</Button>
+                <Button asChild className="bg-white hover:bg-gray-100 text-black">
+                    <Link to="/profile/members-benefits">Upgrade now</Link>
+                </Button>
             </div>
         </div>
     )

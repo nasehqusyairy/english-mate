@@ -16,9 +16,9 @@ const actions = [
         to: "/profile/transaction-history"
     },
     {
-        title: "Member's Benefit",
+        title: "Member's Benefits",
         icon: Medal,
-        to: "/profile/members-benefit"
+        to: "/profile/members-benefits"
     },
     {
         title: "Help",

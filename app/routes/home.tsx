@@ -6,26 +6,40 @@ import PersonalOverview from "~/components/personal-overview";
 import { Link } from "react-router";
 import { meetings, lessons } from "~/lib/samples";
 
+/**
+ * Rank:
+ * - Newbie
+ * - Pre Basic (Elementary)
+ * - Basic (Intermediate)
+ * - Master (Upper Intermediate)
+ * - Advanced
+ * - Proficient
+ */
+
 const overviews = [
   {
     value: 75,
     title: "Lessons",
-    icon: Book
+    icon: Book,
+    progress: 25
   },
   {
     value: 58,
     title: "Meeting",
-    icon: GraduationCap
+    icon: GraduationCap,
+    progress: 58
   },
   {
     value: 98,
     title: "XP Points",
-    icon: Zap
+    icon: Zap,
+    progress: 75
   },
   {
-    value: "Newbie",
+    value: "Pre Basic",
     title: "Rank",
-    icon: Star
+    icon: Star,
+    progress: 2 / 6 * 100
   }
 ]
 
