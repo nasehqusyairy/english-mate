@@ -72,8 +72,8 @@ export function meta({ }: Route.MetaArgs) {
   return [
     { title: "English Mate" },
     { name: "description", content: "Welcome to English Mate!" },
-    { name: "msapplication-TileColor", content: "#8E51FF" },
-    { name: "theme-color", content: "#8E51FF" },
+    { name: "msapplication-TileColor", content: "#8e51ff" },
+    { name: "theme-color", content: "#8e51ff" },
     { name: "apple-mobile-web-app-status-bar-style", content: "#8e51ff" }
   ];
 }
