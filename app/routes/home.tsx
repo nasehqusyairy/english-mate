@@ -1,4 +1,4 @@
-import { Book, GraduationCap, Medal, MessageCircle, Star, SunMoon, Zap } from "lucide-react";
+import { Book, GraduationCap, Medal, MessageCircle, Star, SunMoon, Ticket, Zap } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import LessonItem from "~/components/lesson-item";
 import MeetingItem from "~/components/meeting-item";
@@ -49,12 +49,13 @@ export default function Home() {
           <h1>English Mate</h1>
         </div>
         <div className="flex gap-1">
+          <Button variant={"outline"} className="bg-yellow-500/10 text-yellow-500">
+            <Ticket />
+            <span>200</span>
+          </Button>
           <Button size={"icon"} variant={"outline"} onClick={toggleTheme}>
             <SunMoon />
           </Button>
-          {/* <Button size={"icon"} variant={"outline"}>
-            <MessageCircle />
-          </Button> */}
         </div>
       </header>
       <main className="p-4">

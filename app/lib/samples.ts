@@ -1,11 +1,15 @@
-export const meetings = [
+import type { Meeting } from "~/models/meeting"
+
+export const meetings: Meeting[] = [
     {
         id: "2",
         title: "Writing Skills Workshop",
         presenter: "John Doe",
         date: "20 Sep",
         time: "14.00",
-        tickets: 30,
+        capacity: 50,
+        price: 25,
+        participants: 30,
         tags: ["Writing", "Beginner"]
     },
     {
@@ -14,7 +18,9 @@ export const meetings = [
         presenter: "Fadilah Uhti Rianda",
         date: "15 Sep",
         time: "12.30",
-        tickets: 24,
+        capacity: 12,
+        price: 30,
+        participants: 8,
         tags: ["Speaking"],
         isJoined: true
     },
@@ -24,7 +30,9 @@ export const meetings = [
         presenter: "Jane Smith",
         date: "25 Sep",
         time: "10.00",
-        tickets: 0,
+        capacity: 15,
+        price: 10,
+        participants: 15,
         tags: ["Grammar", "Advanced", "Workshop", "other"]
     }
 ]

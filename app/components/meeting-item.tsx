@@ -10,10 +10,7 @@ type MeetingItemProps = {
 export default ({ meeting }: MeetingItemProps) => {
     return (
         <div className="dark:bg-input/30 p-4 border dark:border-input rounded-2xl w-8/12 shrink-0">
-            <div className="relative mb-4">
-                <div className="top-0 left-0 absolute p-2">
-                    <TagContainer tags={meeting.tags} />
-                </div>
+            <div className="mb-4">
                 <img
                     src={meeting.image || PlaceholderImage}
                     alt="meeting"
@@ -23,6 +20,9 @@ export default ({ meeting }: MeetingItemProps) => {
 
             <div className="text-muted">
                 <div className="mb-4">
+                    <div className="mb-2">
+                        <TagContainer tags={meeting.tags} />
+                    </div>
                     <h1 className="mb-2 font-bold text-foreground hover:underline truncate">
                         <a href="#">{meeting.title}</a>
                     </h1>
@@ -41,10 +41,6 @@ export default ({ meeting }: MeetingItemProps) => {
                     <p className="flex items-center gap-1">
                         <Clock size={10} />
                         {meeting.time}
-                    </p>
-                    <p className="flex items-center gap-1">
-                        <Ticket size={10} />
-                        {meeting.tickets}
                     </p>
                 </div>
             </div>

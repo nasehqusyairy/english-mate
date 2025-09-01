@@ -4,7 +4,9 @@ export type Meeting = {
     presenter: string;
     date: string;
     time: string;
-    tickets: number;
+    participants: number;
+    capacity: number;
+    price: number;
     tags: string[];
     image?: string;
     isJoined?: boolean;

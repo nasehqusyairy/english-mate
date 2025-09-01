@@ -1,7 +1,7 @@
 import type { Meeting } from "~/models/meeting"
 import PlaceholderImage from "~/assets/tools-3d.png";
 import TagContainer from "./tag-container";
-import { Calendar, Check, Clock, Ticket } from "lucide-react";
+import { Calendar, Check, Clock, Ticket, Users } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 export default ({ meetings }: { meetings: Meeting[] }) => {
@@ -11,11 +11,13 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                 <div className="flex justify-between items-center p-4 not-last:border-b" key={index}>
                     <div className="relative w-4/12">
                         <div className="top-0 left-0 absolute p-2">
-                            {meeting.tickets === 0 && (
-                                <Badge className="bg-black/75 text-white">
-                                    Sold Out
-                                </Badge>
-                            )}
+                            <Badge className="bg-black/50 text-white">
+                                {meeting.participants === meeting.capacity ? 'Sold Out' : (
+                                    <>
+                                        <Users size={10} /> {meeting.participants}/{meeting.capacity}
+                                    </>
+                                )}
+                            </Badge>
                         </div>
                         <img src={PlaceholderImage} alt="meeting" className="rounded-2xl w-full" />
                     </div>
@@ -25,8 +27,11 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                             <h1 className="font-bold text-foreground text-sm truncate">
                                 <a href="#" className="hover:underline">{meeting.title}</a>
                             </h1>
-                            <p className="truncate">
+                            <p className="mb-2 truncate">
                                 by <a href="#" className="text-primary hover:underline">{meeting.presenter}</a>
+                            </p>
+                            <p className="flex items-center gap-1">
+
                             </p>
                         </div>
                         <div className="flex justify-between">
@@ -36,9 +41,9 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                             <p className="flex items-center gap-1">
                                 <Clock size={10} />
                                 {meeting.time}</p>
-                            <p className="flex items-center gap-1">
+                            <p className="flex items-center gap-1 text-yellow-500">
                                 <Ticket size={10} />
-                                {meeting.tickets}</p>
+                                {meeting.price}</p>
                         </div>
                     </div>
                 </div>
