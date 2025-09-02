@@ -1,5 +1,5 @@
 export const handle = {
-    title: "Create a Meeting"
+    title: "New Meeting"
 }
 
 export default () => {

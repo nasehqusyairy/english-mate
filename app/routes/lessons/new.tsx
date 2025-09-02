@@ -1,5 +1,5 @@
 export const handle = {
-    title: "Create a Lesson"
+    title: "New Lesson"
 }
 
 export default () => {
