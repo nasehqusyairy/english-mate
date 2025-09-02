@@ -4,12 +4,12 @@ import ModalTransition from "../modal-transition";
 
 export default () => {
     const matches = useMatches();
-    const { title } = matches[matches.length - 1].handle as any;
+    const { title, previous } = matches[matches.length - 1].handle as any;
 
     const navigate = useNavigate();
 
     const handleBack = () => {
-        navigate(-1);
+        navigate(previous || -1);
     };
 
     return (

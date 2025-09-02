@@ -1,15 +1,38 @@
 import { Search, Settings2 } from "lucide-react";
-import { Form, Link, Outlet, useLocation, useOutlet } from "react-router";
+import { Form, href, Link, Outlet, useLocation, useOutlet } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { meetings, lessons } from "~/lib/samples";
 import LessonList from "~/components/lesson-list";
+import type { TabItem } from "./tab-nav";
+import TabNav from "./tab-nav";
 
+const tabItems: TabItem[] = [
+    {
+        value: "all",
+        label: "All",
+        href: "/lessons"
+    },
+    {
+        value: "progress",
+        label: "Progress",
+        href: "/lessons/progress"
+    },
+    {
+        value: "done",
+        label: "Done",
+        href: "/lessons/done"
+    },
+    {
+        value: "created",
+        label: "Created",
+        href: "/lessons/created"
+    },
+];
 
 export default () => {
     const outlet = useOutlet();
-    const location = useLocation();
 
     return (
         <>
@@ -27,25 +50,9 @@ export default () => {
                 </Form>
             </header>
             <main>
-                <Tabs className="gap-0" defaultValue={location.pathname.split("/")[2] || 'all'}>
-                    <div className="px-4 pt-4">
-                        <TabsList className="w-full">
-                            <TabsTrigger asChild value="all">
-                                <Link to="/lessons">All</Link>
-                            </TabsTrigger>
-                            <TabsTrigger asChild value="progress">
-                                <Link to="/lessons/progress">Progress</Link>
-                            </TabsTrigger>
-                            <TabsTrigger asChild value="done">
-                                <Link to="/lessons/done">Done</Link>
-                            </TabsTrigger>
-                            <TabsTrigger asChild value="created">
-                                <Link to="/lessons/created">Created</Link>
-                            </TabsTrigger>
-                        </TabsList>
-                    </div>
+                <TabNav items={tabItems} defaultValue={'all'} className="mx-4 pt-4">
                     {outlet ? <Outlet /> : <LessonList {...{ lessons }} />}
-                </Tabs>
+                </TabNav>
             </main>
         </>
     );

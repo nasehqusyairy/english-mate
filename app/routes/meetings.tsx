@@ -5,11 +5,28 @@ import { Input } from "~/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { meetings } from "~/lib/samples";
 import MeetingList from "~/components/meeting-list";
+import TabNav from "./tab-nav";
 
+const tabItems = [
+    {
+        value: "all",
+        label: "All",
+        href: "/meetings"
+    },
+    {
+        value: "registered",
+        label: "Registered",
+        href: "/meetings/registered"
+    },
+    {
+        value: "created",
+        label: "Created",
+        href: "/meetings/created"
+    }
+]
 
 export default () => {
     const outlet = useOutlet();
-    const location = useLocation();
 
     return (
         <>
@@ -27,22 +44,9 @@ export default () => {
                 </Form>
             </header>
             <main>
-                <Tabs className="gap-0" defaultValue={location.pathname.split("/")[2] || 'all'}>
-                    <div className="px-4 pt-4">
-                        <TabsList className="w-full">
-                            <TabsTrigger asChild value="all">
-                                <Link to="/meetings">All</Link>
-                            </TabsTrigger>
-                            <TabsTrigger asChild value="registered">
-                                <Link to="/meetings/registered">Registered</Link>
-                            </TabsTrigger>
-                            <TabsTrigger asChild value="created">
-                                <Link to="/meetings/created">Created</Link>
-                            </TabsTrigger>
-                        </TabsList>
-                    </div>
+                <TabNav items={tabItems} defaultValue={'all'} className="mx-4 pt-4">
                     {outlet ? <Outlet /> : <MeetingList {...{ meetings }} />}
-                </Tabs>
+                </TabNav>
             </main>
         </>
     );

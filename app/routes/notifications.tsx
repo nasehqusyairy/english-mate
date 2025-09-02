@@ -1,30 +1,54 @@
-import { Link } from "react-router"
+import { Link, Outlet, useOutlet } from "react-router"
+import type { TabItem } from "./tab-nav"
+import TabNav from "./tab-nav"
+import type { NotifItem } from "~/components/notif-list"
+import NotifList from "~/components/notif-list"
+import { handle } from "~/handlers/notifications"
 
-export const handle = {
-    title: "Notifications"
-}
+export { handle }
+
+const tabItems: TabItem[] = [
+    {
+        href: "/notifications",
+        label: "System",
+        value: "system"
+    },
+    {
+        href: "/notifications/missions",
+        label: "Mission",
+        value: "missions"
+    }
+]
+
+const notifItems: NotifItem[] = [
+    {
+        date: new Date("2025-08-31T15:42:00"),
+        title: "Welcome to English Mate!",
+        message: "We're glad to have you here. Explore and enjoy your learning journey! Here you can find various resources to help you improve your English skills.",
+        link: {
+            href: "/meetings",
+            label: "Go to Meetings"
+        }
+    },
+    {
+        date: new Date("2025-08-31T15:42:00"),
+        title: "Upgrade to Pro!",
+        message: "Enjoy exclusive features and content by upgrading to Pro. Take your learning to the next level!",
+        link: {
+            href: "#",
+            label: "Upgrade Now"
+        }
+    }
+]
 
 export default () => {
+    const outlet = useOutlet();
+
     return (
-        <>
-            <main>
-                <div className="p-4 not-last:border-b">
-                    <span className="text-muted text-xs">31 Aug 2025 | 15.42</span>
-                    <h2 className="mb-2 font-bold">Welcome to English Mate!</h2>
-                    <p className="mb-4 text-muted text-sm">
-                        We're glad to have you here. Explore and enjoy your learning journey! Here you can find various resources to help you improve your English skills.
-                    </p>
-                    <Link to={'/meetings'} className="text-primary text-sm hover:underline">Go to Meetings</Link>
-                </div>
-                <div className="p-4 not-last:border-b">
-                    <span className="text-muted text-xs">31 Aug 2025 | 15.42</span>
-                    <h2 className="mb-2 font-bold">Upgrade to Pro!</h2>
-                    <p className="mb-4 text-muted text-sm">
-                        Enjoy exclusive features and content by upgrading to Pro. Take your learning to the next level!
-                    </p>
-                    <a href="#" className="text-primary text-sm hover:underline">Upgrade Now</a>
-                </div>
-            </main>
-        </>
+        <main>
+            <TabNav items={tabItems} defaultValue={'system'} className="px-4">
+                {outlet ? <Outlet /> : <NotifList items={notifItems} />}
+            </TabNav>
+        </main>
     )
 }

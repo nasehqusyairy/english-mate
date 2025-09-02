@@ -22,8 +22,11 @@ export default [
         layout('./components/layouts/modal.tsx', [
 
             route('/tickets', "routes/tickets.tsx"),
-            route('/notifications', "routes/notifications.tsx"),
             route('/view-profile', "routes/view-profile.tsx"),
+
+            route('/notifications', "routes/notifications.tsx", [
+                route('missions', "routes/notifications/missions.tsx"),
+            ]),
 
             route('/meetings/new', "routes/meetings/new.tsx"),
             route('/meetings/preview', "routes/meetings/preview.tsx"),
