@@ -68,7 +68,7 @@ export default ({ selected }: { selected: number }) => {
                     variant="outline"
                     role="combobox"
                     aria-expanded={open}
-                    className="justify-between w-full text-muted dark:text-foreground"
+                    className="justify-between w-full"
                 >
                     {value
                         ? provinces.find((province) => province.value === value)?.label
