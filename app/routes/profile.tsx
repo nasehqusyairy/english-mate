@@ -1,12 +1,12 @@
-import { ChevronRight, FileText, HelpCircle, Key, LogOut, Medal, SunMoon, User } from "lucide-react"
+import { FileText, HelpCircle, Key, LogOut, Mail, Medal, SunMoon, User } from "lucide-react"
 import { Link } from "react-router"
-import ProfileAction from "~/components/profile-action"
+import ProfileAction, { type ProfileActionProps } from "~/components/profile-action"
 import { Button } from "~/components/ui/button"
 import UpgradeProCard from "~/components/ui/upgrade-pro-card"
 
-const actions = [
+const actions: ProfileActionProps[] = [
     {
-        title: "Toggle Dark Mode",
+        title: "Dark Mode",
         icon: SunMoon,
         onClick: () => {
             // jika di localStorage ada key theme = dark, maka berikan class dark pada body
@@ -17,6 +17,10 @@ const actions = [
                 localStorage.setItem("theme", "dark");
                 document.body.classList.add("dark");
             }
+        },
+        target: "switch",
+        onMount: (setIsChecked) => {
+            setIsChecked(localStorage.getItem("theme") === "dark");
         }
     },
     {
@@ -35,23 +39,35 @@ const actions = [
         to: "/profile/members-benefits"
     },
     {
+        title: "Feedback",
+        icon: Mail,
+        to: "/profile/feedback"
+    },
+    {
         title: "Help",
         icon: HelpCircle,
         to: "/profile/help"
-    }, {
+    },
+    {
         title: "Log Out",
         icon: LogOut,
-        onClick: () => {
-            // Handle log out logic here
+        dialogConfig: {
+            title: "Log Out",
+            description: "Are you sure you want to log out?",
+            ConfirmText: "Log Out",
+            onConfirm: () => {
+                // Handle log out logic here
+            }
         }
     }
 ]
 
 export default () => {
+
     return (
         <main>
             <section className="px-4 pt-3">
-                <div className="p-4 border rounded-2xl">
+                <div className="dark:bg-input/30 p-4 border dark:border-input rounded-2xl">
                     <div className="flex items-center gap-4">
                         <div className="flex justify-center items-center bg-primary/10 rounded-full size-15 text-primary shrink-0">
                             <User size={25} />
