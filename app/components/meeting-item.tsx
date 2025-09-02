@@ -25,7 +25,7 @@ export default ({ meeting }: MeetingItemProps) => {
                         <TagContainer tags={meeting.tags} />
                     </div>
                     <h1 className="mb-2 font-bold text-foreground hover:underline truncate">
-                        <Link to={'/meeting-preview'}>{meeting.title}</Link>
+                        <Link to={'/meetings/preview'}>{meeting.title}</Link>
                     </h1>
                     <p className="text-sm truncate">
                         by <Link to={'/view-profile'} className="text-primary hover:underline">{meeting.presenter}</Link>

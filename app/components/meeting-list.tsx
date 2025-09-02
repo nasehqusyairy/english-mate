@@ -26,7 +26,7 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                         <TagContainer tags={meeting.tags} />
                         <div className="my-2">
                             <h1 className="font-bold text-foreground text-sm truncate">
-                                <Link to={'/meeting-preview'} className="hover:underline">{meeting.title}</Link>
+                                <Link to={'/meetings/preview'} className="hover:underline">{meeting.title}</Link>
                             </h1>
                             <p className="mb-2 truncate">
                                 by <Link to={'/view-profile'} className="text-primary hover:underline">{meeting.presenter}</Link>

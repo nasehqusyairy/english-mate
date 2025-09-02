@@ -19,8 +19,10 @@ export default () => {
                         <Input type="search" placeholder="Search..." />
                         <Search className="top-1/2 right-2 absolute -translate-y-1/2 transform" size={16} />
                     </div>
-                    <Button type="button">
-                        <Settings2 />
+                    <Button asChild type="button">
+                        <Link to="/meetings/filter">
+                            <Settings2 />
+                        </Link>
                     </Button>
                 </Form>
             </header>

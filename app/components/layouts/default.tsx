@@ -48,11 +48,15 @@ export default () => {
             onAnimationStart={() => setIsAnimating(true)}
             onAnimationComplete={() => setIsAnimating(false)}
         >
-            <Button size={"icon"} className={"fab " + (isFABActive ? "lesson-fab" : "")}>
-                <Book />
+            <Button asChild size={"icon"} className={"fab " + (isFABActive ? "lesson-fab" : "")}>
+                <Link to={'/lessons/new'}>
+                    <Book />
+                </Link>
             </Button>
-            <Button size={"icon"} className={"fab " + (isFABActive ? "meeting-fab" : "")}>
-                <GraduationCap />
+            <Button asChild size={"icon"} className={"fab " + (isFABActive ? "meeting-fab" : "")}>
+                <Link to={'/meetings/new'}>
+                    <GraduationCap />
+                </Link>
             </Button>
             <Button size={"icon"} variant={isFABActive ? "secondary" : "default"} className={"fab " + (isFABActive ? "active" : "")} onClick={() => setIsFABActive(!isFABActive)}>
                 <Plus />

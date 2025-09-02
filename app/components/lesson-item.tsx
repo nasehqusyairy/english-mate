@@ -20,7 +20,7 @@ export default ({ tags, title, description, progress, author }: Lesson) => {
                 )}
             </div>
             <h2 className="font-bold hover:underline truncate">
-                <Link to={'/lesson-preview'}>{title}</Link>
+                <Link to={'/lessons/preview'}>{title}</Link>
             </h2>
             <p className="text-sm truncate">
                 by <Link to={'/view-profile'} className="text-primary hover:underline">{author}</Link>

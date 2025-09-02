@@ -7,8 +7,10 @@ export default [
             route('/meetings', "routes/meetings.tsx", [
                 route('registered', "routes/meetings/registered.tsx"),
                 route('created', "routes/meetings/created.tsx"),
+
             ]),
             route('/lessons', "routes/lessons.tsx", [
+
                 route('progress', "routes/lessons/progress.tsx"),
                 route('done', "routes/lessons/done.tsx"),
                 route('created', "routes/lessons/created.tsx"),
@@ -18,13 +20,21 @@ export default [
         ]),
 
         layout('./components/layouts/modal.tsx', [
-            route('/notifications', "routes/notifications.tsx"),
 
+            route('/tickets', "routes/tickets.tsx"),
+            route('/notifications', "routes/notifications.tsx"),
             route('/view-profile', "routes/view-profile.tsx"),
-            route('/meeting-preview', "routes/meeting-preview.tsx"),
-            route('/lesson-preview', "routes/lesson-preview.tsx"),
+
+            route('/meetings/new', "routes/meetings/new.tsx"),
+            route('/meetings/preview', "routes/meetings/preview.tsx"),
+            route('/meetings/filter', "routes/meetings/filter.tsx"),
+
+            route('/lessons/new', "routes/lessons/new.tsx"),
+            route('/lessons/preview', "routes/lessons/preview.tsx"),
+            route('/lessons/filter', "routes/lessons/filter.tsx"),
 
             route('/profile/help', './routes/profile/help.tsx'),
+            route('/profile/feedback', './routes/profile/feedback.tsx'),
             route('/profile/edit', './routes/profile/edit.tsx'),
             route('/profile/change-password', './routes/profile/change-password.tsx'),
             route('/profile/transaction-history', './routes/profile/transaction-history.tsx'),
