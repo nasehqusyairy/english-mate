@@ -21,7 +21,7 @@ export default ({ items }: NotifListProps) => {
                     <div className="flex justify-between items-center gap-4">
                         <div>
                             <h2 className="font-bold">{item.title}</h2>
-                            <p className="mb-4 text-muted text-sm">
+                            <p className="mb-2 text-muted text-sm">
                                 {item.message}
                             </p>
                         </div>
