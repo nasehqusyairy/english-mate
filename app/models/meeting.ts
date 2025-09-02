@@ -10,4 +10,5 @@ export type Meeting = {
     tags: string[];
     image?: string;
     isJoined?: boolean;
+    xp: number;
 }

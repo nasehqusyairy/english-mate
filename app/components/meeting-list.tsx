@@ -1,7 +1,7 @@
 import type { Meeting } from "~/models/meeting"
 import PlaceholderImage from "~/assets/tools-3d.png";
 import TagContainer from "./tag-container";
-import { Calendar, Check, Clock, Ticket, Users } from "lucide-react";
+import { Calendar, Check, Clock, Ticket, Users, Zap } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Link } from "react-router";
 
@@ -38,13 +38,17 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                         <div className="flex justify-between">
                             <p className="flex items-center gap-1">
                                 <Calendar size={10} />
-                                {meeting.date}</p>
+                                {meeting.date} | {meeting.time}
+                            </p>
+
                             <p className="flex items-center gap-1">
-                                <Clock size={10} />
-                                {meeting.time}</p>
+                                <Zap size={10} />
+                                {meeting.xp}
+                            </p>
                             <p className="flex items-center gap-1 text-yellow-500">
                                 <Ticket size={10} />
-                                {meeting.price}</p>
+                                {meeting.price === 0 ? "Free" : meeting.price}
+                            </p>
                         </div>
                     </div>
                 </div>

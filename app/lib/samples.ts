@@ -7,6 +7,7 @@ export const meetings: Meeting[] = [
         presenter: "John Doe",
         date: "20 Sep",
         time: "14.00",
+        xp: 20,
         capacity: 50,
         price: 25,
         participants: 30,
@@ -18,6 +19,7 @@ export const meetings: Meeting[] = [
         presenter: "Fadilah Uhti Rianda",
         date: "15 Sep",
         time: "12.30",
+        xp: 30,
         capacity: 12,
         price: 30,
         participants: 8,
@@ -30,8 +32,9 @@ export const meetings: Meeting[] = [
         presenter: "Jane Smith",
         date: "25 Sep",
         time: "10.00",
+        xp: 12,
         capacity: 15,
-        price: 10,
+        price: 0,
         participants: 15,
         tags: ["Grammar", "Advanced", "Workshop", "other"]
     }
