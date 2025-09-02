@@ -52,7 +52,7 @@ export default function Home() {
         <div className="brand">
           <h1>English Mate</h1>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <Button asChild variant={"outline"} className="bg-yellow-500/10 dark:bg-yellow-500/10 border-yellow-500 dark:border-yellow-500 text-yellow-500 dark:text-yellow-500">
             <Link to={'/tickets'}>
               <Ticket />
