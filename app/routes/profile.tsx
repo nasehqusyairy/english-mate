@@ -51,7 +51,7 @@ const actions: ProfileActionProps[] = [
     {
         title: "Log Out",
         icon: LogOut,
-        dialogConfig: {
+        dialogconfig: {
             title: "Log Out",
             description: "Are you sure you want to log out?",
             ConfirmText: "Log Out",

@@ -158,7 +158,7 @@
   }
   
   .app-footer-container {
-    height: var(--navbar-height);
+    height: calc(var(--navbar-height) + 1rem);
     @apply relative;
   }
   

@@ -18,7 +18,7 @@ export type ProfileActionProps = {
 type AlertDialogParentProps = {
     children: React.ReactNode;
     className?: string;
-    dialogConfig: DialogConfig;
+    dialogconfig: DialogConfig;
 }
 
 type DialogConfig = {
@@ -36,14 +36,14 @@ const AlertDialogParent = (props: AlertDialogParentProps) => {
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>{props.dialogConfig.title}</AlertDialogTitle>
+                    <AlertDialogTitle>{props.dialogconfig.title}</AlertDialogTitle>
                     <AlertDialogDescription>
-                        {props.dialogConfig.description}
+                        {props.dialogconfig.description}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={props.dialogConfig.onConfirm}>{props.dialogConfig.ConfirmText || "Confirm"}</AlertDialogAction>
+                    <AlertDialogAction onClick={props.dialogconfig.onConfirm}>{props.dialogconfig.ConfirmText || "Confirm"}</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
@@ -52,7 +52,7 @@ const AlertDialogParent = (props: AlertDialogParentProps) => {
 
 export default (props: ProfileActionProps) => {
 
-    const Parent = props.to ? Link : props.dialogConfig ? AlertDialogParent : "button";
+    const Parent = props.to ? Link : props.dialogconfig ? AlertDialogParent : "div";
 
     const [isChecked, setisChecked] = useState(false);
 
@@ -68,7 +68,7 @@ export default (props: ProfileActionProps) => {
     }, []);
 
     return (
-        <Parent dialogConfig={props.dialogConfig!} onClick={handleOnClick} to={props.to!} className="flex justify-between items-center hover:bg-muted/10 active:bg-muted/15 p-4 not-last:border-b w-full cursor-pointer">
+        <Parent dialogconfig={props.dialogconfig!} onClick={handleOnClick} to={props.to!} className="flex justify-between items-center hover:bg-muted/10 active:bg-muted/15 p-4 not-last:border-b w-full cursor-pointer">
 
             <div className="flex gap-4">
                 <div className="flex justify-center items-center bg-primary/10 rounded size-6 text-primary shrink-0">
