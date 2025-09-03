@@ -4,6 +4,13 @@ import ProfileAction, { type ProfileActionProps } from "~/components/profile-act
 import { Button } from "~/components/ui/button"
 import UpgradeProCard from "~/components/upgrade-pro-card"
 
+// export async function loader() {
+//     // Simulasi loading lama, misalnya 3 detik
+//     await new Promise((resolve) => setTimeout(resolve, 3000));
+
+//     return { message: "Data berhasil dimuat setelah delay 3 detik!" };
+// }
+
 const actions: ProfileActionProps[] = [
     {
         title: "Dark Mode",

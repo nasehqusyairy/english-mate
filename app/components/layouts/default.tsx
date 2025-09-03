@@ -37,6 +37,10 @@ export default () => {
         exit: { x: "-25%", opacity: 0 }
     };
 
+    useEffect(() => {
+        console.log(navigation.state);
+    }, [navigation.state]);
+
     return (
         <motion.div
             className={'main-transition ' + (isAnimating ? "animating" : "")}
@@ -61,7 +65,7 @@ export default () => {
             <Button size={"icon"} variant={isFABActive ? "secondary" : "default"} className={"fab " + (isFABActive ? "active" : "")} onClick={() => setIsFABActive(!isFABActive)}>
                 <Plus />
             </Button>
-            <Progress className="bg-background rounded-none" value={navigation.state === "loading" ? 75 : 0} />
+            <Progress className="z-1 bg-background rounded-none" value={navigation.state === "loading" ? 75 : 0} />
             <Outlet />
             <footer className="app-footer-container">
                 <div className="app-footer">
