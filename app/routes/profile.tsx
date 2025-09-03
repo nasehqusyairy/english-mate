@@ -2,7 +2,7 @@ import { FileText, HelpCircle, Key, LogOut, Mail, Medal, SunMoon, User } from "l
 import { Link } from "react-router"
 import ProfileAction, { type ProfileActionProps } from "~/components/profile-action"
 import { Button } from "~/components/ui/button"
-import UpgradeProCard from "~/components/ui/upgrade-pro-card"
+import UpgradeProCard from "~/components/upgrade-pro-card"
 
 const actions: ProfileActionProps[] = [
     {

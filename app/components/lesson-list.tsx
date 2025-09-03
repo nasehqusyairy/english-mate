@@ -1,9 +1,7 @@
 import type { Meeting } from "~/models/meeting"
 import TagContainer from "./tag-container";
-import { Calendar, Clock, Heart, Lightbulb, NotebookPen, Users, Zap } from "lucide-react";
-import { Button } from "./ui/button";
+import { Lightbulb, Zap } from "lucide-react";
 import type { Lesson } from "~/models/lesson";
-import { Progress } from "./ui/progress";
 import { Link } from "react-router";
 
 export default ({ lessons }: { lessons: Lesson[] }) => {

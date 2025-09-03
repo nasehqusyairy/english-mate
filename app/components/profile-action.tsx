@@ -3,10 +3,11 @@ import { Link } from "react-router";
 import { Switch } from "./ui/switch";
 import { useEffect, useState } from "react";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "./ui/alert-dialog";
+import type { LucideIcon } from "~/models/lucide-icon";
 
 export type ProfileActionProps = {
     title: string;
-    icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>;
+    icon: LucideIcon;
     to?: string;
     onClick?: () => void;
     target?: "modal" | "switch" | "dialog";

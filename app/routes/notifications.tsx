@@ -46,7 +46,7 @@ export default () => {
 
     return (
         <main>
-            <TabNav items={tabItems} defaultValue={'system'} className="px-4">
+            <TabNav items={tabItems} defaultValue={'system'} className="px-4 pt-4">
                 {outlet ? <Outlet /> : <NotifList items={notifItems} />}
             </TabNav>
         </main>

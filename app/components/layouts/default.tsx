@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation, useNavigation } from "react-router";
 import { Button } from "../ui/button";
-import { Bell, Book, ChartBar, ChartColumnBig, GraduationCap, Home, Plus, User } from "lucide-react";
+import { BookOpen, ChartColumnBig, GraduationCap, Home, Plus, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Progress } from "../ui/progress";
 import { Badge } from "../ui/badge";
@@ -9,7 +9,7 @@ import { motion, type Variants } from 'framer-motion';
 
 const navItems = [
     { title: 'Meetings', to: "/meetings", icon: <GraduationCap /> },
-    { title: 'Lessons', to: "/lessons", icon: <Book /> },
+    { title: 'Lessons', to: "/lessons", icon: <BookOpen /> },
     { title: 'Home', to: "/", icon: <Home /> },
     { title: 'Leaderboard', to: "/leaderboard", icon: <ChartColumnBig /> },
     { title: 'Profile', to: "/profile", icon: <User /> },
@@ -50,7 +50,7 @@ export default () => {
         >
             <Button asChild size={"icon"} className={"fab " + (isFABActive ? "lesson-fab" : "")}>
                 <Link to={'/lessons/new'}>
-                    <Book />
+                    <BookOpen />
                 </Link>
             </Button>
             <Button asChild size={"icon"} className={"fab " + (isFABActive ? "meeting-fab" : "")}>

@@ -1,4 +1,4 @@
-import { Bell, Book, GraduationCap, Medal, MessageCircle, Star, SunMoon, Ticket, Zap } from "lucide-react";
+import { Bell, BookOpen, GraduationCap, Star, Ticket, Zap } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import LessonItem from "~/components/lesson-item";
 import MeetingItem from "~/components/meeting-item";
@@ -21,7 +21,7 @@ const overviews = [
   {
     value: 75,
     title: "Lessons",
-    icon: Book,
+    icon: BookOpen,
     progress: 25
   },
   {
