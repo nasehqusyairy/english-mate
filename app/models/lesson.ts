@@ -1,7 +1,10 @@
 export type Lesson = {
+    id: string;
     tags: string[];
     title: string;
     author: string;
     description: string;
-    progress?: number;
+    xp: number;
+    topics: number;
+    completed: number;
 }

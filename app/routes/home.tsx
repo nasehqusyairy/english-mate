@@ -95,7 +95,7 @@ export default function Home() {
             <Link to="/lessons" className="text-primary text-sm">View all</Link>
           </div>
           <div className="flex flex-nowrap gap-4 overflow-x-auto">
-            {lessons.filter(lesson => lesson.progress).map((lesson, index) => (
+            {lessons.filter(lesson => lesson.completed > 0).map((lesson, index) => (
               <LessonItem key={'lesson-' + index} {...lesson} />
             ))}
           </div>

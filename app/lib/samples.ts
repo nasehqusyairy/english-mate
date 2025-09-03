@@ -1,3 +1,4 @@
+import type { Lesson } from "~/models/lesson"
 import type { Meeting } from "~/models/meeting"
 
 export const meetings: Meeting[] = [
@@ -40,13 +41,15 @@ export const meetings: Meeting[] = [
     }
 ]
 
-export const lessons = [
+export const lessons: Lesson[] = [
     {
         id: "1",
         title: "Simple Present Tense",
         author: "Jane Doe",
         description: "This lesson will teach you about the usage of simple present tense in daily conversation.",
-        progress: 75,
+        xp: 10,
+        topics: 5,
+        completed: 2,
         tags: ["Grammar", "Beginner"]
     },
     {
@@ -54,7 +57,9 @@ export const lessons = [
         author: "Fadilah Uhti Rianda",
         title: "Past Continuous Tense",
         description: "Learn how to describe actions that were ongoing in the past.",
-        progress: 25,
+        xp: 15,
+        topics: 5,
+        completed: 3,
         tags: ["Grammar", "Intermediate", "Other"]
     },
     {
@@ -62,6 +67,9 @@ export const lessons = [
         author: "Jane Doe",
         title: "Future Perfect Tense",
         description: "Understand how to express actions that will be completed in the future.",
+        xp: 20,
+        topics: 5,
+        completed: 0,
         tags: ["Grammar", "Advanced"]
     }
 ]

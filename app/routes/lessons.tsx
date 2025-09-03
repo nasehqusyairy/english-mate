@@ -1,9 +1,8 @@
 import { Search, Settings2 } from "lucide-react";
-import { Form, href, Link, Outlet, useLocation, useOutlet } from "react-router";
+import { Form, Link, Outlet, useOutlet } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { meetings, lessons } from "~/lib/samples";
+import { lessons } from "~/lib/samples";
 import LessonList from "~/components/lesson-list";
 import type { TabItem } from "./tab-nav";
 import TabNav from "./tab-nav";

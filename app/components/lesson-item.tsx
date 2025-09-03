@@ -3,7 +3,7 @@ import { Badge } from "./ui/badge"
 import { Progress } from "./ui/progress"
 import { Link } from "react-router"
 
-export default ({ tags, title, description, progress, author }: Lesson) => {
+export default ({ tags, title, description, topics, completed, author }: Lesson) => {
     return (
         <div className="gap-2 grid dark:bg-input/30 p-4 border dark:border-input rounded-2xl w-8/12 shrink-0">
             <div className="flex gap-1">
@@ -29,8 +29,8 @@ export default ({ tags, title, description, progress, author }: Lesson) => {
                 {description}
             </p>
             <div className="gap-1 grid text-right">
-                <span className="text-xs">{progress}%</span>
-                <Progress value={progress} className="w-full" />
+                <span className="text-xs">{completed}/{topics}</span>
+                <Progress value={completed / topics * 100} className="w-full" />
             </div>
         </div>
     )

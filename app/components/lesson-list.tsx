@@ -1,6 +1,6 @@
 import type { Meeting } from "~/models/meeting"
 import TagContainer from "./tag-container";
-import { Calendar, Clock, Heart, Users } from "lucide-react";
+import { Calendar, Clock, Heart, Lightbulb, NotebookPen, Users, Zap } from "lucide-react";
 import { Button } from "./ui/button";
 import type { Lesson } from "~/models/lesson";
 import { Progress } from "./ui/progress";
@@ -21,13 +21,17 @@ export default ({ lessons }: { lessons: Lesson[] }) => {
                                 by <Link to={'/view-profile'} className="text-primary hover:underline">{lesson.author}</Link>
                             </p>
                         </div>
-                        <p className="mb-2">{lesson.description}</p>
-                        {lesson.progress && (
-                            <>
-                                <p className="mb-2">{lesson.progress}%</p>
-                                <Progress value={lesson.progress} />
-                            </>
-                        )}
+                        <p className="mb-4">{lesson.description}</p>
+                        <div className="flex gap-4">
+                            <p className="flex items-center gap-1 text-primary">
+                                <Zap size={10} />
+                                {lesson.xp}
+                            </p>
+                            <p className="flex items-center gap-1 text-yellow-500">
+                                <Lightbulb size={10} />
+                                {lesson.completed}/{lesson.topics}
+                            </p>
+                        </div>
                     </div>
                 </div>
             ))}

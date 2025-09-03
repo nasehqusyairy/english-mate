@@ -41,7 +41,7 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                                 {meeting.date} | {meeting.time}
                             </p>
 
-                            <p className="flex items-center gap-1">
+                            <p className="flex items-center gap-1 text-primary">
                                 <Zap size={10} />
                                 {meeting.xp}
                             </p>
