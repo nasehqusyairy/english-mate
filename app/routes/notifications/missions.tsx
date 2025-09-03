@@ -1,5 +1,4 @@
 import MissionList, { type MissionItem } from "~/components/mission-list";
-import type { NotifItem } from "~/components/notif-list"
 import { handle } from "~/handlers/notifications";
 
 export { handle };

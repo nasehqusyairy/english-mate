@@ -7,7 +7,7 @@ export default () => {
             <div>
                 <h1 className="font-bold uppercase">Upgrade to Pro</h1>
                 <h2 className="font-semibold text-2xl">
-                    <span className="text-black/50 line-through">Rp. 750K</span> <span>Rp. 100K</span> /mo
+                    <span className="text-black/50 line-through">Rp 750K</span> <span>Rp 100K</span> /mo
                 </h2>
             </div>
             <p className="mb-4 w-8/12">

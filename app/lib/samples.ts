@@ -1,5 +1,7 @@
 import type { Lesson } from "~/models/lesson"
 import type { Meeting } from "~/models/meeting"
+import type { OrderKey } from "~/models/order-key"
+import type { Tag } from "~/models/tag"
 
 export const meetings: Meeting[] = [
     {
@@ -72,4 +74,66 @@ export const lessons: Lesson[] = [
         completed: 0,
         tags: ["Grammar", "Advanced"]
     }
+]
+
+export const tags: Tag[] = [
+    {
+        id: "1",
+        label: "Grammar",
+    },
+    {
+        id: "2",
+        label: "Reading",
+    },
+    {
+        id: "3",
+        label: "Speaking",
+    },
+    {
+        id: "4",
+        label: "Listening",
+    },
+    {
+        id: "5",
+        label: "Newbie",
+    },
+    {
+        id: "6",
+        label: "Pre Basic",
+    },
+    {
+        id: "7",
+        label: "Basic",
+    },
+    {
+        id: "8",
+        label: "Master",
+    },
+    {
+        id: "9",
+        label: "Advanced",
+    }
+]
+
+export const orderKeys: OrderKey[] = [
+    {
+        value: 'author',
+        label: 'Author'
+    },
+    {
+        value: "datetime",
+        label: "Date & Time"
+    },
+    {
+        value: "title",
+        label: "Title"
+    },
+    {
+        value: "price",
+        label: "Price"
+    },
+    {
+        value: "xp",
+        label: "Experience Points"
+    },
 ]
