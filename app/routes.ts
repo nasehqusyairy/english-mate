@@ -33,7 +33,7 @@ export default [
             route('/meetings/filter', "routes/meetings/filter.tsx"),
 
             route('/lessons/new', "routes/lessons/new.tsx"),
-            route('/lessons/preview', "routes/lessons/preview.tsx"),
+            route('/lessons/:id', "routes/lessons/preview.tsx"),
             route('/lessons/filter', "routes/lessons/filter.tsx"),
 
             route('/profile/help', './routes/profile/help.tsx'),

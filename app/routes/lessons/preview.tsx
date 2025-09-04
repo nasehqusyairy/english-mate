@@ -4,13 +4,14 @@ import TagContainer from "~/components/tag-container";
 import { lessons } from "~/lib/samples"
 import PlaceholderImage from "~/assets/tools-3d.png";
 import { Button } from "~/components/ui/button";
+import type { Route } from "./+types/preview";
 
 export const handle = {
     title: "Lesson Preview"
 }
 
-const lesson = lessons[0];
-export default () => {
+export default ({ params }: Route.ComponentProps) => {
+    const lesson = lessons[parseInt(params.id) || 0] || lessons[0];
     return (
         <>
             <main>

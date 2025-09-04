@@ -13,7 +13,7 @@ export default ({ lessons }: { lessons: Lesson[] }) => {
                         <TagContainer tags={lesson.tags} />
                         <div className="my-2">
                             <h1 className="font-bold text-foreground text-sm hover:underline truncate cursor-pointer">
-                                <Link to={'/lessons/preview'}>{lesson.title}</Link>
+                                <Link to={`/lessons/${index}`}>{lesson.title}</Link>
                             </h1>
                             <p className="truncate">
                                 by <Link to={'/view-profile'} className="text-primary hover:underline">{lesson.author}</Link>
