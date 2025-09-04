@@ -5,9 +5,9 @@ export const handle = {
 export default () => {
     return (
         <main>
-            <div className="px-4">
+            <div className="p-4">
                 <p>
-                    We value your feedback! Please let us know your thoughts and suggestions.
+                    Not implemented yet.
                 </p>
             </div>
         </main>

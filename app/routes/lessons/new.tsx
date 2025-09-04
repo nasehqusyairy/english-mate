@@ -5,9 +5,9 @@ export const handle = {
 export default () => {
     return (
         <main>
-            <div className="px-4">
+            <div className="p-4">
                 <p>
-                    This is the create lesson page. Here you can create a new lesson.
+                    not implemented yet.
                 </p>
             </div>
         </main>

@@ -15,7 +15,7 @@ export default () => {
     return (
         <ModalTransition>
             <header className="app-header-container">
-                <div className="flex items-center gap-4 app-header">
+                <div className="z-30 flex items-center gap-4 app-header">
                     <button onClick={handleBack} className="text-primary"><ArrowLeft size={24} /></button>
                     <h1 className="font-bold text-lg">{title}</h1>
                 </div>

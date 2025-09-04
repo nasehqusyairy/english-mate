@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 export default ({ meetings }: { meetings: Meeting[] }) => {
     return (
-        <div>
+        <>
             {meetings.map((meeting, index) => (
                 <div className="flex justify-between items-center p-4 not-last:border-b" key={index}>
                     <div className="relative w-4/12">
@@ -53,6 +53,6 @@ export default ({ meetings }: { meetings: Meeting[] }) => {
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     )
 }

@@ -5,9 +5,9 @@ export const handle = {
 export default () => {
     return (
         <main>
-            <div className="px-4">
+            <div className="p-4">
                 <p>
-                    This is the meeting preview page.
+                    Not implemented yet.
                 </p>
             </div>
         </main>
