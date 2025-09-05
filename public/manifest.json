@@ -1,5 +1,9 @@
 {
  "name": "English Mate",
+ "start_url": "/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#8e51ff",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
